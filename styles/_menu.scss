@@ -1,0 +1,31 @@
+.menu-main-background{
+    width: 60%;
+    height: 97vh;
+    left: 20%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-paper-back{
+    transform: translateY(18%);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    height: 60%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.menu-button{
+    background: none;
+    border: none;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #202020;
+    width: 30%;
+    margin: auto;
+    &:hover {
+        color:#bbbbbb
+    }
+}

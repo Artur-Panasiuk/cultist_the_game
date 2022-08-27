@@ -1,0 +1,73 @@
+.workbench-overlay{
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    position: absolute;
+    background: radial-gradient(circle, rgba(116, 121, 69, 0.05) 0%, rgba(0,0,0,0.8) 100%);
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes glow {
+    0%{
+        background: radial-gradient(circle, rgba(116, 121, 69, 0.05) 0%, rgba(0,0,0,0.8) 100%);
+    }
+
+    100%{
+        background: radial-gradient(circle, rgba(116, 121, 69, 0.08) 0%, rgba(0,0,0,0.8) 100%);
+    }
+}
+
+.demon-overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.demon-overlay img{
+    width: 20vw;
+    position: inherit;
+    left: 40vw;
+    top: 3vh;
+    filter: invert(100%);
+}
+
+.demon-overlay p{
+    width: 80vw;
+    padding-left: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+}
+
+.powder-image{
+    width: 65%;
+    height: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13%;
+}
+
+.anim-container{
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: relative;
+    margin-left: 6%;
+}
+
+.Anim-main-container{
+    width: 60%;
+    height: 40%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

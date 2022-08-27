@@ -1,0 +1,32 @@
+@import "./menu";
+@import "./animCont";
+@import "./gameCont";
+@import "./misc";
+
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    background-color: rgb(70, 70, 70);
+
+    font-family: Arial;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+p{
+    font-size: 6vw;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 4%;
+    color: rgba(211, 29, 29);
+    opacity: 0.70;
+}
