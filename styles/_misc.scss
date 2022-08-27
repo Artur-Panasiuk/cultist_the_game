@@ -1,0 +1,69 @@
+.reset-progress-button{
+    background: none;
+    border: none;
+    color: #202020;
+    font-size: 2vw;
+    font-weight: bolder;
+    float: left;
+    padding: 0;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+.reset-progress-button:hover{
+    color: rgba(211, 29, 29, 0.7);
+}
+
+.fade-in{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+@keyframes fadein {
+    0%{
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100%{
+        background-color: black;
+    }
+}
+
+.fade-out{
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+.seal-image{
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    left: 16%;
+    top: 26%;
+    filter: invert(0.21) sepia(1) saturate(74) hue-rotate(-359deg);
+    animation-name: slab;
+    animation-duration: 1s;
+}
+
+@keyframes slab {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
