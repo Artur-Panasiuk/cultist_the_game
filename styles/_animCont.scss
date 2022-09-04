@@ -20,6 +20,28 @@
     }
 }
 
+.tutorial-overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    h1{
+        color: rgba(211, 29, 29);
+        font-size: 5vw;
+    }
+    h2{
+        color:#bbbbbb;
+        font-size: 3vw;
+        padding: 3vw;
+    }
+    h3{
+        color: rgba(211, 29, 29);
+        font-size: 2vw;
+        font-weight: bolder;
+    }
+}
+
 .demon-overlay{
     width: 100vw;
     height: 100vh;
