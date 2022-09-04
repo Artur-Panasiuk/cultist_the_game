@@ -6,6 +6,7 @@ const config = {
             menuPaperBack: "menuPaperBack",
             container: "container",
             workbenchOverlay: "workbenchOverlay",
+            tutorialOverlay: "tutorialOverlay",
             demonOverlay: "demonOverlay",
             animContainer: "animContainer",
             AnimMainContainer: "AnimMainContainer",
@@ -28,6 +29,7 @@ const config = {
             menuPaperBack: "menu-paper-back",
             container: "container",
             workbenchOverlay: "workbench-overlay",
+            tutorialOverlay: "tutorial-overlay",
             demonOverlay: "demon-overlay",
             animContainer: "anim-container",
             AnimMainContainer: "Anim-main-container",
@@ -75,6 +77,11 @@ const config = {
                 fadeOut: 1000,
             }
         },
+        tutorial: {
+            head: "How to play",
+            body: "Click on the labeled bottles to increase progress on bars below. Each bottle increases levels differently. Your goal is to match each bar progress bar to its crossed section.",
+            footer: "Click anywhere to close",
+        }
     },
     applicationInfo:{
         version: "0.5",
@@ -221,7 +228,8 @@ const config = {
             currentProgress: [0, 0, 0, 0, 0, 0, 0],
             currentDemon: 0,
             isSlabClean: true,
-            isNextLevelIssued: false
+            isNextLevelIssued: false,
+            isTutorial: true,
         }
     }
 }
@@ -646,6 +654,33 @@ function getWorkbenchOverlay(cssobj){
     return cont;
 }
 
+//TUTORIAL
+
+function getTutorialOverlay(cssobj){
+    let cont = getContentContainer(cssobj.ids.tutorialOverlay, cssobj.classes.tutorialOverlay);
+    let header = document.createElement("h1");
+    let body = document.createElement("h2");
+    let footer = document.createElement("h3");
+
+    header.innerHTML = cssobj.tutorial.head;
+    body.innerHTML = cssobj.tutorial.body;
+    footer.innerHTML = cssobj.tutorial.footer;
+
+    cont.appendChild(header);
+    cont.appendChild(body);
+    cont.appendChild(footer);
+
+    return cont;
+}
+
+function handleTutorialClickEvent(cssobj, state){
+    let cont = document.querySelector(`#${cssobj.ids.tutorialOverlay}`);
+    cont.addEventListener("click", () => {
+        state.isTutorial = false;
+        cont.remove();
+    })
+}
+
 //WORKBENCH
 
 function drawWorkbench(gameData, state, cssobj){
@@ -663,6 +698,11 @@ function drawWorkbench(gameData, state, cssobj){
     changeElementImg(cssobj.classes.barsContainer, cssobj.images.paths.objects, cssobj.images.objects.paper);
     changeElementImg(cssobj.classes.barMarker, cssobj.images.paths.objects, cssobj.images.objects.marker);
 
+    if(state.isTutorial){
+        let tutorial = getTutorialOverlay(cssobj);
+        appendElToContainer(cssobj.ids.container, tutorial);
+        handleTutorialClickEvent(cssobj, state);
+    }
     nextLevel(isLevelPassed(state, gameData.demons), gameData.demons, state, cssobj);
 }
 
